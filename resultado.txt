@@ -1,0 +1,15 @@
+Trabalho por nivel = 7: 0
+Trabalho por n = 3: 0
+Trabalho por F(n) = 3: 0
+Trabalho por nivel = 8: 0
+Trabalho por n = 6: 0
+Trabalho por F(n) = 6: 0
+Trabalho por nivel = 9: 0
+Trabalho por n = 12: 0
+Trabalho por F(n) = 12: 0
+Trabalho por nivel = 10: 0
+Trabalho por n = 25: 0
+Trabalho por F(n) = 25: 0
+Trabalho por nivel = 11: 0
+Trabalho por n = 50: 0
+Trabalho por F(n) = 50: 0
