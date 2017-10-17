@@ -12,7 +12,6 @@ FILE *fp;
 int f (int n, int g) // conta numero iterações de f(n).
 {
   int resultado;
-  // printf("n=%d, n=%d\n",n,g);
   resultado = pow(n,g);
   return resultado ; // retorna n^g
 }
@@ -63,7 +62,6 @@ void func_t (int n) // simula a recorrencia
   time(&tempo_final);
 
   tempo = difftime(tempo_final, tempo_inicial);
-  // printf("%ld\n", tempo);
   registra_trabalho_nivel_atual_arvore(nivel,tempo);
   registra_trabalho_por_n(n,tempo);
   registra_trabalho_por_f_n(fn,tempo);
