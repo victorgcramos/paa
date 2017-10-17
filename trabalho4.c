@@ -32,25 +32,27 @@ void registra_trabalho_nivel_atual_arvore(int nivel, time_t tempo){
 }
 
 int Calcula_nivel_atual_arvore(int tamanho){
-  tam = realloc(&tam,sizeof(int)*cont_tam);
+  tam = realloc(&tam,sizeof(int)*tamanho);
   tam[cont_tam] =
   cont_tam++;
 }
 
 void func_t (int n) // simula a recorrencia
 {
-
+  int nivel;
   time_t tempo_inicial, tempo_final, tempo;
   if (n<=1) return;
 
   for (int cont=1; cont<=a; cont++) {// faz a chamadas de tamanho (n/b) - c
     printf("Esquerda: %d\n",  n/b - c);
     tam_esq ++;
+    nivel = Calcula_nivel_atual_arvore(tam_esq);
     func_t( (n/b) - c );
   }
   for (int cont=1; cont<=d; cont++){ // faz d chamadas de tamanho (n/e) - f
     printf("direita: %d\n",  n/e - ff);
-    tamdir++;
+    tam_dir++;
+    nivel = Calcula_nivel_atual_arvore(tam_dir);
     func_t( (n/e) - ff );
   }
   int fn = f(n,g);
@@ -62,7 +64,6 @@ void func_t (int n) // simula a recorrencia
 
   tempo = difftime(tempo_final, tempo_inicial);
   // printf("%ld\n", tempo);
-  int nivel = Calcula_nivel_atual_arvore();
   registra_trabalho_nivel_atual_arvore(nivel,tempo);
   registra_trabalho_por_n(n,tempo);
   registra_trabalho_por_f_n(fn,tempo);
