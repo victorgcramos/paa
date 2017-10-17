@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
-#include <errno.h>   // for errno
-#include <limits.h>  // for INT_MAX
 #include <stdlib.h>  // for strtol
 
 
@@ -30,30 +28,28 @@ void registra_trabalho_nivel_atual_arvore(int nivel, time_t tempo){
   printf("Trabalho por nivel = %d: %d\n", nivel, tempo);
 }
 
-int Calcula_nivel_atual_arvore(int tamanho){
-  tam = realloc(&tam,sizeof(int)*tamanho);
-  tam[cont_tam] =
-  cont_tam++;
+int Calcula_nivel_atual_arvore (int esq, int dir){
+
 }
 
 void func_t (int n) // simula a recorrencia
 {
-  int nivel;
   time_t tempo_inicial, tempo_final, tempo;
   if (n<=1) return;
 
   for (int cont=1; cont<=a; cont++) {// faz a chamadas de tamanho (n/b) - c
     printf("Esquerda: %d\n",  n/b - c);
     tam_esq ++;
-    nivel = Calcula_nivel_atual_arvore(tam_esq);
     func_t( (n/b) - c );
   }
   for (int cont=1; cont<=d; cont++){ // faz d chamadas de tamanho (n/e) - f
     printf("direita: %d\n",  n/e - ff);
     tam_dir++;
-    nivel = Calcula_nivel_atual_arvore(tam_dir);
     func_t( (n/e) - ff );
   }
+
+  cont_tam = tam_dir > tam_esq ? tam_dir : tam_esq;
+
   int fn = f(n,g);
   time(&tempo_inicial);
   for (int cont=1; cont<= f(n,g); ){ // simula o tempo de f(n) no nível atual
@@ -62,14 +58,13 @@ void func_t (int n) // simula a recorrencia
   time(&tempo_final);
 
   tempo = difftime(tempo_final, tempo_inicial);
-  registra_trabalho_nivel_atual_arvore(nivel,tempo);
+  // int nivel = Calcula_nivel_atual_arvore(tam_esq, tam_dir)
+  // registra_trabalho_nivel_atual_arvore(nivel,tempo);
   registra_trabalho_por_n(n,tempo);
   registra_trabalho_por_f_n(fn,tempo);
 }
 
 int main(int argc, char const *argv[]) {
-
-  char* char_a,*char_b,*char_c,*char_d,*char_e,*char_f,*char_g,*char_n;
   int n;
   a = strtol(argv[1],&a,10);
   b = strtol(argv[2],&b,10);
@@ -79,6 +74,7 @@ int main(int argc, char const *argv[]) {
   ff = strtol(argv[6],&ff,10);
   g = strtol(argv[7],&g,10);
   n = strtol(argv[8],&n,10);
+  // cont_tam = a
 
   printf("a=%d,b=%d,c=%d,d=%d,e=%d,f=%d,g=%d,n=%d,\n",a,b,c,d,e,ff,g,n);
   // printf("%d\n", a);
