@@ -58,6 +58,7 @@ void func_t (int n) // simula a recorrencia
   gettimeofday(&endTime, NULL);
 
   tempo = ((endTime.tv_sec * 1000000 + endTime.tv_usec) - (beginTime.tv_sec * 1000000 + beginTime.tv_usec));
+  tempo = tempo / 1000;
   // int nivel = Calcula_nivel_atual_arvore(tam_esq, tam_dir)
   // registra_trabalho_nivel_atual_arvore(nivel,tempo);
   registra_trabalho_por_n(n,tempo);
@@ -70,7 +71,6 @@ int main(int argc, char const *argv[]) {
   printf("\n%d  %d  %d  %d  %d  %d  %d  %d\n",a,b,c,d,e,ff,g,n);
   fp = fopen("resultado.txt","w");
 // T(n) = aT( (n/b) –c ) + dT( (n/e) –f ) + f(n)
-  getchar();
   func_t(n);
 
   fclose(fp);
