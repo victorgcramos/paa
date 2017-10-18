@@ -35,13 +35,13 @@ for j in range(0, 9):
     for i in range(0, 9):
         title = ['a:', vs['a'][i], 'b:', vs['b'][i], 'c:',vs['c'][i],
                 'd:',vs['d'][i], 'e:',vs['e'][i], 'f:',vs['f'][i],"Versao:",str(j)]
-        name = "-".join(title)
+        name = "./img/" + "-".join(title)
         title = " ".join(title)
 
         for g in g_array:
             # lets take advantage of g value can be a array index too
             total_time_exec.append([])
-            max_value = 128000
+            max_value = 1280
 
             for n in n_array:
                 d = datetime.datetime.now()
@@ -53,7 +53,7 @@ for j in range(0, 9):
                     resp = "-0.1\n".encode('utf-8')
                 else:
                     try:
-                        resp = subprocess.check_output(["./trabalho4", n, vs['a'][i], vs['b'][i], vs['c'][i], vs['d'][i], vs['e'][i], vs['f'][i], g], timeout=360)
+                        resp = subprocess.check_output(["./trabalho4", n, vs['a'][i], vs['b'][i], vs['c'][i], vs['d'][i], vs['e'][i], vs['f'][i], g], timeout=3)
                     except:
                         max_value = int(n)
                         print(str(max_value))
