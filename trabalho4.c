@@ -95,7 +95,7 @@ int main (int argc, char const *argv[]) {
   tb = tempo_inicio.tv_sec * multi + tempo_inicio.tv_usec;
   tempo = ta - tb;
   // Printa o tempo dividido por 1000, visto que o tempo deve ser medido em ms, e não us
-  printf("%ld\n", tempo/1000);
+  printf("%ld\n", tempo);
 
   return 0;
 }
