@@ -1,4 +1,2 @@
-resultado.txt
-trabalho4
-makefile
-oi
+/img/*
+!/img/.gitkeep
