@@ -5,8 +5,8 @@ from matplotlib import pyplot as PLT
 
 result_file = open('result.txt', 'w')
 
-# n_array = ['50', '100', '200', '400', '800', '1000', '2000', '4000', '8000', '16000', '32000', '64000', '128000']
-n_array = ['50', '100', '200', '400', '800', '1000']
+n_array = ['50', '100', '200', '400', '800', '1000', '2000', '4000', '8000', '16000', '32000', '64000', '128000']
+# n_array = ['50', '100', '200', '400', '800', '1000']
 
 # vs = {
 #     'a': ['1', '2', '4', '8', '16', '2', '1', '1', '1', '8'],
@@ -62,12 +62,16 @@ for i in range(0, 9):
 
             resp = resp.decode("utf-8").split("\n")
             print(resp)
-            total_time_exec[int(g)].append(float(resp[0]))
+            if len(resp) > 8:
+                total_time_exec[int(g)].append(float(resp[8]))
+            else:
+                total_time_exec[int(g)].append(float(resp[0]))
+            # print(float(resp[8]))
 
         PLT.plot(n_array, total_time_exec[int(g)], 'ro', color=colors[int(g)])
         labels.append('g = ' + g)
         PLT.xlabel('N')
-        PLT.ylabel('Tempo de execução (ms)')
+        PLT.ylabel('Tempo de execução (s)')
         PLT.title(title)
 
     PLT.legend(labels, loc='upper left')
