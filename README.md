@@ -1,6 +1,6 @@
 # Trabalho de PAA
 ## Buid Instructions
-Para rodar o programa, digite:
+fkashjdoipfjioas
 ```bash
 make
 ```
@@ -9,7 +9,10 @@ Ou, caso queira rodar na linha de comando, digite os comandos da seguinte forma:
 gcc trabalho4.c -o trabalho4 -lm && ./trabalho4 a b c d e f g n
 ```
 
-foiahsdoifhioasd
+
+faspdohfpoiahsdoif
+
+
 
 adcionando uma linha away
 
